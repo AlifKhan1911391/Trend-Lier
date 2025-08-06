@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,13 +11,73 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Playfair+Display:wght@400;600;700&family=Raleway:wght@300;400;500;600&display=swap" rel="stylesheet">
     <title>Trendelier</title>
     <style>
+            .voting-post {
+        width: 70%;
+        max-width: 700px;
+        background: white;
+        padding: 25px;
+        border-radius: 20px;
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+        margin-top: 20px;
+        text-align: center;
+    }
+    
+    .voting-form {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        margin-top: 15px;
+    }
+    
+    .radio-option {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+    }
+    
+    .radio-option input[type="radio"] {
+        accent-color: #4169E1;
+        transform: scale(1.2);
+    }
+    
+    .radio-option label {
+        font-family: 'Raleway', sans-serif;
+        font-size: 1.2rem;
+        color: #555;
+        cursor: pointer;
+    }
+    
+    .submit-btn {
+        padding: 12px 30px;
+        background: linear-gradient(135deg, #4169E1, #00008B);
+        color: white;
+        border: none;
+        border-radius: 50px;
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 600;
+        font-size: 1rem;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        margin-top: 10px;
+        box-shadow: 0 4px 15px rgba(65, 105, 225, 0.4);
+    }
+    
+    .submit-btn:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 8px 20px rgba(65, 105, 225, 0.5);
+    }
         /* Reset and Base Styles */
+       html{
+           scroll-behavior:smooth;
+       }
         html, body {
             margin: 0;
             padding: 0;
             font-family: 'Raleway', sans-serif;
             color: #333;
             line-height: 1.6;
+            overflow-x:hidden;
         }
         
         /* Navigation */
@@ -106,6 +165,7 @@
             position: relative;
             padding-bottom: 15px;
             margin: 0;
+            text-decoration:none;
         }
         
         #headline::after {
@@ -272,7 +332,7 @@
     
     <div id="heading">
         <img class="circle" src="https://raw.githubusercontent.com/AlifKhan1911391/Trend-Lier/refs/heads/main/1754420231181.jpg" height="90px" width="auto"> 
-        <h1 id="headline">Trendelier</h1> 
+        <a id="headline" href="https://www.facebook.com/profile.php?id=61577625225610">Trendelier</a> 
     </div>
     
     <div id="welcome-section">
@@ -282,6 +342,21 @@
     </div>
     
     <div id="mainbody">
+         <div class="voting-post">
+            <a href="https://www.facebook.com/share/p/1B5TUM7zbA/" class="posttext">guys what do you prefer for next ??</a>
+            <form action="https://formspree.io/f/xwpoprjp" method="post" class="voting-form">
+                <div class="radio-option">
+                    <input type="radio" id="option1" name="preference" value="Accessories" required>
+                    <label for="option1">Accessories</label>
+                </div>
+                <div class="radio-option">
+                    <input type="radio" id="option2" name="preference" value="T shirts" required>
+                    <label for="option2">T shirts</label>
+                </div>
+                <button type="submit" class="submit-btn">Submit</button>
+            </form>
+        </div>
+        <br><br>
         <div class="postdiv">
             <img class="post" src="https://raw.githubusercontent.com/AlifKhan1911391/Trend-Lier/refs/heads/main/Screenshot_20250806-085516.jpg">
             <em>Price ৳0</em>
