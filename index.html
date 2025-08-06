@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta name="author" content="Alif Khan">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="icon" href="https://raw.githubusercontent.com/AlifKhan1911391/Trend-Lier/refs/heads/main/1754420231181.jpg" type="image/jpeg">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+<title>Trendelier</title>
+        <style>
+            /* Reset default margins and padding */
+            html, body {
+                margin: 0;
+                padding: 0;
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            }
+            
+            /* Navigation */
+            #nav {
+                position: fixed;
+                top: 0;
+                width: 100%;
+                background-color: #333;
+                z-index: 1000;
+                transition: transform 0.3s ease;
+                transform: translateY(0);
+            }
+
+            #nav ol {
+                list-style-type: none;
+                margin: 0;
+                padding: 0;
+                overflow: hidden;
+            }
+
+            #nav li {
+                float: left;
+            }
+
+            #nav li a {
+                display: block;
+                color: white;
+                text-align: center;
+                padding: 13px 11px;
+                text-decoration: none;
+                transition: background-color 0.3s;
+            }
+
+            #nav li a:hover {
+                background-color: #111;
+            }
+
+            .activenav {
+                background-color: #4169E1;
+                color: white;
+            }
+
+            .activenav:hover {
+                background-color: #00008B;
+            }
+            
+            #heading {
+                margin-top: 50px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 20px;
+                padding: 20px;
+                background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            }
+            
+            .circle {
+                border-radius: 50%;
+                border: 3px solid #4169E1;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+                transition: transform 0.3s ease;
+            }
+            
+            .circle:hover {
+                transform: scale(1.05);
+            }
+            
+            #headline {
+                font-size: 2.5rem;
+                font-weight: 700;
+                background: linear-gradient(to right, #4169E1, #00008B);
+                -webkit-background-clip: text;
+                background-clip: text;
+                color: transparent;
+                text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+                letter-spacing: 1px;
+                position: relative;
+                padding-bottom: 10px;
+            }
+            
+            #headline::after {
+                content: '';
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 100%;
+                height: 3px;
+                background: linear-gradient(to right, #4169E1, #00008B);
+                border-radius: 3px;
+            }
+            
+            #mainbody {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                width: 100%;
+                padding: 20px 0;
+            }
+            
+            .postdiv {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                width: 100%;
+                max-width: 800px;
+                gap: 15px;
+            }
+            
+            .post {
+                border-radius: 30px;
+                width: 60%;
+                max-width: 600px;
+                height: auto;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            }
+            
+            .posttext {
+                text-align: center;
+                font-size: 1.2rem;
+                color: #333;
+                font-weight: 500;
+                margin-top: 10px;
+                max-width: 80%;
+                line-height: 1.5;
+                font-family: "Oswald", sans-serif; font-optical-sizing: auto; font-weight:300; font-style: normal;
+ text-decoration:none;
+  color: #6CB4EE; text-shadow: 0 1px 1px rgba(0,0,0,0.1); transition: color 0.3s ease;             
+            }
+        </style>
+    </head>
+    <body>
+        <div id="nav">
+            <ol>
+                <li><a href="" class="activenav">Home</a></li>
+                <li><a href="order.html">Order</a></li>
+                <li><a href="https://www.facebook.com/profile.php?id=61577625225610">FB Page</a></li>
+            </ol>
+        </div>
+        <div id="heading">
+          <img class="circle" src="https://raw.githubusercontent.com/AlifKhan1911391/Trend-Lier/refs/heads/main/1754420231181.jpg" height="80px" width="auto"> 
+          <h1 id="headline">Trendelier</h1> 
+        </div>
+       <div id="mainbody">
+           <div class="postdiv">
+             <img class="post" src="https://raw.githubusercontent.com/AlifKhan1911391/Trend-Lier/refs/heads/main/Screenshot_20250806-085516.jpg">
+             <a class="posttext" href="https://www.facebook.com/story.php?story_fbid=122120652740920840&id=61577625225610">Laidback. Luxe. Linen.<br>Your skin deserves to breathe this summer 🌿</a>  
+           </div>
+       </div>
+    </body>
+</html>
