@@ -1,170 +1,322 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta name="author" content="Alif Khan">
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width,initial-scale=1.0">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="icon" href="https://raw.githubusercontent.com/AlifKhan1911391/Trend-Lier/refs/heads/main/1754420231181.jpg" type="image/jpeg">
-<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
-<title>Trendelier</title>
-        <style>
-            /* Reset default margins and padding */
-            html, body {
-                margin: 0;
-                padding: 0;
-                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            }
-            
-            /* Navigation */
-            #nav {
-                position: fixed;
-                top: 0;
-                width: 100%;
-                background-color: #333;
-                z-index: 1000;
-                transition: transform 0.3s ease;
-                transform: translateY(0);
-            }
+<head>
+    <meta name="author" content="Alif Khan">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="icon" href="https://raw.githubusercontent.com/AlifKhan1911391/Trend-Lier/refs/heads/main/1754420231181.jpg" type="image/jpeg">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Playfair+Display:wght@400;600;700&family=Raleway:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <title>Trendelier</title>
+    <style>
+        /* Reset and Base Styles */
+        html, body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Raleway', sans-serif;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        /* Navigation */
+        #nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: #333;
+            z-index: 1000;
+            transition: transform 0.3s ease;
+            transform: translateY(0);
+            font-family: 'Montserrat', sans-serif;
+        }
 
-            #nav ol {
-                list-style-type: none;
-                margin: 0;
-                padding: 0;
-                overflow: hidden;
-            }
+        #nav ol {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
 
-            #nav li {
-                float: left;
-            }
+        #nav li {
+            float: left;
+        }
 
-            #nav li a {
-                display: block;
-                color: white;
-                text-align: center;
-                padding: 13px 11px;
-                text-decoration: none;
-                transition: background-color 0.3s;
-            }
+        #nav li a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 15px 20px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+        }
 
-            #nav li a:hover {
-                background-color: #111;
-            }
+        #nav li a:hover {
+            background-color: #111;
+            transform: translateY(-2px);
+        }
 
-            .activenav {
-                background-color: #4169E1;
-                color: white;
-            }
+        .activenav {
+            background-color: #4169E1;
+            color: white;
+        }
 
-            .activenav:hover {
-                background-color: #00008B;
-            }
-            
+        .activenav:hover {
+            background-color: #00008B;
+        }
+        
+        /* Header Section */
+        #heading {
+            margin-top: 60px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 25px;
+            padding: 30px 20px;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .circle {
+            border-radius: 50%;
+            border: 3px solid #4169E1;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+        }
+        
+        .circle:hover {
+            transform: scale(1.05) rotate(5deg);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+        }
+        
+        #headline {
+            font-size: 2.8rem;
+            font-weight: 700;
+            font-family: 'Playfair Display', serif;
+            background: linear-gradient(to right, #4169E1, #00008B);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+            letter-spacing: 1.5px;
+            position: relative;
+            padding-bottom: 15px;
+            margin: 0;
+        }
+        
+        #headline::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80%;
+            height: 4px;
+            background: linear-gradient(to right, #4169E1, #00008B);
+            border-radius: 4px;
+        }
+        
+        /* Welcome Section */
+        #welcome-section {
+            text-align: center;
+            padding: 40px 20px;
+            background: white;
+            margin: 0 auto;
+            max-width: 900px;
+        }
+
+        #welcome-heading {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            font-size: 2.3rem;
+            color: #4169E1;
+            margin-bottom: 20px;
+            letter-spacing: 1px;
+        }
+
+        #welcome-text {
+            font-family: 'Raleway', sans-serif;
+            font-weight: 400;
+            font-size: 1.3rem;
+            color: #555;
+            line-height: 1.8;
+            margin-bottom: 30px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        #shop-now-btn {
+            display: inline-block;
+            padding: 15px 40px;
+            background: linear-gradient(135deg, #4169E1, #00008B);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(65, 105, 225, 0.4);
+            letter-spacing: 0.8px;
+            border: none;
+            cursor: pointer;
+        }
+
+        #shop-now-btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(65, 105, 225, 0.5);
+            background: linear-gradient(135deg, #00008B, #4169E1);
+        }
+        
+        /* Main Content */
+        #mainbody {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            width: 100%;
+            padding: 40px 0;
+            background-color: #f9f9f9;
+        }
+        
+        .postdiv {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            width: 100%;
+            max-width: 900px;
+            gap: 25px;
+            padding: 0 20px;
+        }
+        
+        .post {
+            border-radius: 35px;
+            width: 70%;
+            max-width: 700px;
+            height: auto;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+            transition: all 0.4s ease;
+        }
+        
+        .post:hover {
+            transform: scale(1.02);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+        }
+        
+        .posttext {
+            text-align: center;
+            font-size: 1.4rem;
+            font-weight: 500;
+            margin-top: 20px;
+            max-width: 85%;
+            line-height: 1.7;
+            font-family: 'Raleway', sans-serif;
+            text-decoration: none;
+            color: #6CB4EE;
+            text-shadow: 0 2px 3px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            padding: 0 15px;
+        }
+        
+        .posttext:hover {
+            color: #4169E1;
+            transform: scale(1.03);
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
             #heading {
-                margin-top: 50px;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                gap: 20px;
-                padding: 20px;
-                background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            }
-            
-            .circle {
-                border-radius: 50%;
-                border: 3px solid #4169E1;
-                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-                transition: transform 0.3s ease;
-            }
-            
-            .circle:hover {
-                transform: scale(1.05);
+                flex-direction: column;
+                gap: 15px;
+                padding: 25px 15px;
             }
             
             #headline {
-                font-size: 2.5rem;
-                font-weight: 700;
-                background: linear-gradient(to right, #4169E1, #00008B);
-                -webkit-background-clip: text;
-                background-clip: text;
-                color: transparent;
-                text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
-                letter-spacing: 1px;
-                position: relative;
-                padding-bottom: 10px;
-            }
-            
-            #headline::after {
-                content: '';
-                position: absolute;
-                bottom: 0;
-                left: 0;
-                width: 100%;
-                height: 3px;
-                background: linear-gradient(to right, #4169E1, #00008B);
-                border-radius: 3px;
-            }
-            
-            #mainbody {
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                flex-direction: column;
-                width: 100%;
-                padding: 20px 0;
-            }
-            
-            .postdiv {
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                flex-direction: column;
-                width: 100%;
-                max-width: 800px;
-                gap: 15px;
+                font-size: 2.2rem;
             }
             
             .post {
-                border-radius: 30px;
-                width: 60%;
-                max-width: 600px;
-                height: auto;
-                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                width: 90%;
             }
             
-            .posttext {
-                text-align: center;
-                font-size: 1.2rem;
-                color: #333;
-                font-weight: 500;
-                margin-top: 10px;
-                max-width: 80%;
-                line-height: 1.5;
-                font-family: "Oswald", sans-serif; font-optical-sizing: auto; font-weight:300; font-style: normal;
- text-decoration:none;
-  color: #6CB4EE; text-shadow: 0 1px 1px rgba(0,0,0,0.1); transition: color 0.3s ease;             
+            #welcome-heading {
+                font-size: 1.8rem;
             }
-        </style>
-    </head>
-    <body>
-        <div id="nav">
-            <ol>
-                <li><a href="" class="activenav">Home</a></li>
-                <li><a href="order.html">Order</a></li>
-                <li><a href="https://www.facebook.com/profile.php?id=61577625225610">FB Page</a></li>
-            </ol>
+            
+            #welcome-text {
+                font-size: 1.1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="nav">
+        <ol>
+            <li><a href="" class="activenav">Home</a></li>
+            <li><a href="order.html">Order</a></li>
+            <li><a href="https://www.facebook.com/profile.php?id=61577625225610">FB Page</a></li>
+        </ol>
+    </div>
+    
+    <div id="heading">
+        <img class="circle" src="https://raw.githubusercontent.com/AlifKhan1911391/Trend-Lier/refs/heads/main/1754420231181.jpg" height="90px" width="auto"> 
+        <h1 id="headline">Trendelier</h1> 
+    </div>
+    
+    <div id="welcome-section">
+        <h2 id="welcome-heading">Welcome to Trendelier</h2>
+        <p id="welcome-text">Where effortless elegance meets contemporary fashion. Discover our curated collection of premium dresses and accessories designed to inspire confidence and celebrate your unique style.</p>
+        <a href="order.html" id="shop-now-btn">Order Now</a>
+    </div>
+    
+    <div id="mainbody">
+        <div class="postdiv">
+            <img class="post" src="https://raw.githubusercontent.com/AlifKhan1911391/Trend-Lier/refs/heads/main/Screenshot_20250806-085516.jpg">
+            <a class="posttext" href="https://www.facebook.com/story.php?story_fbid=122120652740920840&id=61577625225610">
+                Laidback. Luxe. Linen.<br>Your skin deserves to breathe this summer 🌿
+            </a>  
         </div>
-        <div id="heading">
-          <img class="circle" src="https://raw.githubusercontent.com/AlifKhan1911391/Trend-Lier/refs/heads/main/1754420231181.jpg" height="80px" width="auto"> 
-          <h1 id="headline">Trendelier</h1> 
-        </div>
-       <div id="mainbody">
-           <div class="postdiv">
-             <img class="post" src="https://raw.githubusercontent.com/AlifKhan1911391/Trend-Lier/refs/heads/main/Screenshot_20250806-085516.jpg">
-             <a class="posttext" href="https://www.facebook.com/story.php?story_fbid=122120652740920840&id=61577625225610">Laidback. Luxe. Linen.<br>Your skin deserves to breathe this summer 🌿</a>  
-           </div>
-       </div>
-    </body>
+    </div>
+    
+    <script>
+        // Enhanced scroll behavior for navigation
+        let lastScroll = 0;
+        const nav = document.getElementById('nav');
+        const navHeight = nav.offsetHeight;
+        
+        window.addEventListener('scroll', () => {
+            const currentScroll = window.pageYOffset;
+            
+            if (currentScroll <= 0) {
+                nav.style.transform = 'translateY(0)';
+                return;
+            }
+            
+            if (currentScroll > lastScroll && currentScroll > navHeight) {
+                // Scrolling down
+                nav.style.transform = 'translateY(-100%)';
+            } else {
+                // Scrolling up
+                nav.style.transform = 'translateY(0)';
+            }
+            
+            lastScroll = currentScroll;
+        });
+        
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
 </html>
